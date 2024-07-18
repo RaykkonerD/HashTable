@@ -21,16 +21,24 @@ public class TabelaHash {
         lista.get(indice).add(aluno);
     }
 
-    public Aluno pegarValor(int matricula){
+    public String pegarValor(int matricula){
         int indice = funcaoHash(matricula);
-        
+        return lista.get(indice).getAluno(matricula).getNome();
     }
+
+    public Aluno retirarValor(int matricula){
+        int indice = funcaoHash(matricula);
+        Aluno alunoARemover = lista.get(indice).getAluno(matricula);
+        return lista.get(indice).removeAluno(alunoARemover);
+    }
+
 
     @Override
     public String toString(){
         String str = "";
 
         for(ListaSEncadeada l : lista){
+            str += "[ " + lista.indexOf(l) + " ]\n";
             for(int i = 0; i < l.size(); i++){
                 Nodo previous = l.get(i).getPrevious();
                 Nodo next = l.get(i).getNext();

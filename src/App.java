@@ -13,5 +13,16 @@ public class App {
         th.inserirValor(a4);
         th.inserirValor(a5);
         System.out.println(th);
+
+        System.out.println("30 é " + th.pegarValor(30));
+        System.out.println("31 é " + th.pegarValor(31));
+        System.out.println("32 é " + th.pegarValor(32));
+
+        System.out.println();
+        System.out.println("Aluno " + th.retirarValor(36).getNome() + " removido.");
+        System.out.println("Aluno " + th.retirarValor(35).getNome() + " removido.");
+        System.out.println();
+
+        System.out.println(th);
     }
 }
