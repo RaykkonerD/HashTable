@@ -32,10 +32,9 @@ public class TabelaHash {
         return lista.get(indice).removeAluno(alunoARemover);
     }
 
-
     @Override
     public String toString(){
-        String str = "";
+       String str = "";
 
         for(ListaSEncadeada l : lista){
             str += "[ " + lista.indexOf(l) + " ]\n";
