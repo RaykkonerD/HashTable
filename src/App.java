@@ -59,6 +59,9 @@ public class App {
         System.out.println();
         th2.retirarValor(31);
         th2.retirarValor(35);
+        System.out.println("Bianca removida");
+        System.out.println("Pedro removido");
+        System.out.println();
 
         System.out.println("------ Lista ------");
         System.out.print(th2);
