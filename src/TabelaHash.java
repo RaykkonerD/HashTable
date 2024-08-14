@@ -26,10 +26,10 @@ public class TabelaHash {
         return lista.get(indice).getAluno(matricula).getNome();
     }
 
-    public Aluno retirarValor(int matricula){
+    public String retirarValor(int matricula){
         int indice = funcaoHash(matricula);
         Aluno alunoARemover = lista.get(indice).getAluno(matricula);
-        return lista.get(indice).removeAluno(alunoARemover);
+        return lista.get(indice).removeAluno(alunoARemover).getNome();
     }
 
     @Override
@@ -43,7 +43,10 @@ public class TabelaHash {
                 Nodo next = l.get(i).getNext();
                 str += ((previous != null) ? previous.getValue().getNome() : "null") + " <- " + l.get(i).getValue().getNome() + " -> " + ((next != null) ? next.getValue().getNome() : "null") + "\n";
             }
-            str += "\n";
+            
+            if(lista.indexOf(l) < this.lista.size() - 1){
+                str += "\n";
+            }
         }
         return str;
     }

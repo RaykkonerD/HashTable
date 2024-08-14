@@ -23,8 +23,8 @@ public class App {
         // System.out.println("32 é " + th.pegarValor(32));
 
         // System.out.println();
-        // System.out.println("Aluno " + th.retirarValor(36).getNome() + " removido.");
-        // System.out.println("Aluno " + th.retirarValor(35).getNome() + " removido.");
+        // System.out.println("Aluno " + th.retirarValor(36) + " removido.");
+        // System.out.println("Aluno " + th.retirarValor(35) + " removido.");
         // System.out.println();
 
         // System.out.println("------ Lista ------");
@@ -48,7 +48,7 @@ public class App {
         th2.inserirValor(a6_2);
         System.out.println("=================== TabelaHash 2 ===================");
         System.out.println("------ Lista ------");
-        System.out.println(th2);
+        System.out.print(th2);
         System.out.println("-------------------\n");
 
         System.out.println("30 é " + th2.pegarValor(30));
@@ -56,13 +56,12 @@ public class App {
         System.out.println("32 é " + th2.pegarValor(32));
         System.out.println("40 é " + th2.pegarValor(40));
 
-        // System.out.println();
-        // System.out.println("Aluno " + th2.retirarValor(36).getNome() + " removido.");
-        // System.out.println("Aluno " + th2.retirarValor(35).getNome() + " removido.");
-        // System.out.println();
+        System.out.println();
+        th2.retirarValor(31);
+        th2.retirarValor(35);
 
-        // System.out.println("------ Lista ------");
-        // System.out.println(th2);
-        // System.out.println("-------------------\n");
+        System.out.println("------ Lista ------");
+        System.out.print(th2);
+        System.out.println("-------------------\n");
     }
 }

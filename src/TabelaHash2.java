@@ -33,18 +33,11 @@ public class TabelaHash2 {
 
 		while(indice < listaAnterior.size()){
             Aluno aluno = listaAnterior.get(indice);
-			if(aluno == null || aluno.getMatricula() == 0){
-                //System.out.print((aluno != null ? aluno.getNome() : "null") + " ");
-                indice++;
-            } else {
+			if(aluno != null || aluno.getMatricula() != 0){
 				inserirValor(aluno);
 			}
+            indice++;
 		}
-
-        for(Aluno a : lista){
-            System.out.print(a.getNome() + " ");
-        }
-        System.out.println();
 	}
 
     public void inserirValor(Aluno aluno){
@@ -60,6 +53,7 @@ public class TabelaHash2 {
                     return ;
                 } else if(indice == this.tamanho - 1){
                     redimensionar();
+                    inserirValor(aluno);
                     return ;
                 } else {
                     indice++;
@@ -85,6 +79,23 @@ public class TabelaHash2 {
         }
     }
 
+    public void retirarValor(int matricula){
+		int indice = funcaoHash(matricula);
+        Aluno aluno = lista.get(indice);
+
+		while(aluno != null && indice < lista.size()){
+			if(aluno.getMatricula() == matricula){
+                aluno.setMatricula(0);
+                return ;
+            }
+            indice++;
+            aluno = lista.get(indice);
+		}
+
+        throw new RuntimeException("Chave " + matricula + " não encontrada");
+    }
+		
+
     @Override
     public String toString(){
        String str = "";
@@ -100,7 +111,9 @@ public class TabelaHash2 {
                 str += lista.get(i).getMatricula() + ": " + lista.get(i).getNome() + "\n";
             }
             
-            str += "\n";
+            if(i < this.lista.size() - 1){
+                str += "\n";
+            }
         }
 
         return str;
